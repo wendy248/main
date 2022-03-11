@@ -21,7 +21,7 @@ func main() {
 	fmt.Println("Harga minuman", favorit, "sebesar :", hargaSebelum, "sehingga perlu membayar (PPN) :", hargaSesudah)
 
 	//anonymous func
-	anggotaMember := func(member string) bool {
+	anggotaMember := func(nama string) bool {
 		if nama == "Wendy" {
 			return true
 		} else if nama == "Harry" {
@@ -32,5 +32,5 @@ func main() {
 	}
 	module.Member(nama, anggotaMember)
 
-	module.DaftarMenu()
+	// module.DaftarMenu()
 }
