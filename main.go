@@ -20,7 +20,7 @@ func main() {
 	hargaSebelum, hargaSesudah := module.Recent(favorit)
 	fmt.Println("Harga minuman", favorit, "sebesar :", hargaSebelum, "sehingga perlu membayar (PPN) :", hargaSesudah)
 
-	//anony func
+	//anonymous func
 	anggotaMember := func(member string) bool {
 		if nama == "Wendy" {
 			return true
@@ -30,7 +30,7 @@ func main() {
 			return false
 		}
 	}
-	// fmt.Printf("%T\n", anggotaMember)
 	module.Member(nama, anggotaMember)
 
+	module.DaftarMenu()
 }
