@@ -32,5 +32,5 @@ func main() {
 	}
 	module.Member(nama, anggotaMember)
 
-	// module.DaftarMenu()
+	module.TampilMenu()
 }
