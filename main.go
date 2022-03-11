@@ -1,14 +1,18 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+
+	"github.com/wendy248/module"
+)
 
 func main() {
 	nama := "Wendy"
 	favorit := "kopi"
 
-	Intro()
-	fmt.Println(Salam(nama))
-	
-	hargaSebelum, hargaSesudah := Recent(favorit)
-	fmt.Println("Harga minuman :", hargaSebelum, "sehingga perlu membayar (PPN) :", hargaSesudah)
+	module.Intro()
+	fmt.Println(module.Salam(nama))
+
+	hargaSebelum, hargaSesudah := module.Recent(favorit)
+	fmt.Println("Harga minuman", favorit, "sebesar :", hargaSebelum, "sehingga perlu membayar (PPN) :", hargaSesudah)
 }
