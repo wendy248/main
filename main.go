@@ -31,8 +31,13 @@ func main() {
 		}
 	}
 	module.Member(nama, anggotaMember)
-	// module.TampilJaga()
 
+	//struct
+	module.TampilJaga()
+
+	//struct method
 	jaga1 := module.DaftarJaga{module.Nama: "Rian"}
-	jaga1.module.Shift(nama)
+	jaga1.modulasi.ShiftJaga(nama)
+
+
 }
