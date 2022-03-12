@@ -32,5 +32,7 @@ func main() {
 	}
 	module.Member(nama, anggotaMember)
 
-	module.TampilMenu()
+	//struct
+	// module.TampilMenu
+	module.TampilData
 }
