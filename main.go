@@ -49,7 +49,8 @@ func main() {
 
 	//function multiple return
 	hargaSebelum, hargaDiskon := module.Recent(favorit, jumlah)
-	fmt.Println("\nHarga minuman", favorit, "sebesar :", hargaSebelum, "dan setelah diskon member (khusus member) :", hargaDiskon)
+	fmt.Println("\nTotal harga minuman", favorit, "sebesar :", hargaSebelum, "dan setelah diskon member (khusus member) :", hargaDiskon)
+	fmt.Printf("%T\n", jumlah)
 
 	//interface struct
 	pjk := module.PPN{Harga: float32(hargaSebelum)}
