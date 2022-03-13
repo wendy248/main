@@ -7,8 +7,8 @@ import (
 )
 
 func main() {
-
 	var nama, favorit string
+	var jumlah float32
 
 	//function
 	module.Intro()
@@ -44,8 +44,11 @@ func main() {
 	fmt.Printf("Masukkan nama menu yang ingin dipesan : ")
 	fmt.Scan(&favorit)
 
+	fmt.Printf("Masukkan jumlah porsi yang diinginkan : ")
+	fmt.Scan(&jumlah)
+
 	//function multiple return
-	hargaSebelum, hargaDiskon := module.Recent(favorit)
+	hargaSebelum, hargaDiskon := module.Recent(favorit, jumlah)
 	fmt.Println("\nHarga minuman", favorit, "sebesar :", hargaSebelum, "dan setelah diskon member (khusus member) :", hargaDiskon)
 
 	//interface struct
