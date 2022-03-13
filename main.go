@@ -7,6 +7,7 @@ import (
 )
 
 func main() {
+
 	var nama, favorit string
 
 	//function
