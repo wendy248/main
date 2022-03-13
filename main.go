@@ -7,24 +7,22 @@ import (
 )
 
 func main() {
-	nama := "Wendy"
-	favorit := "kopi"
+	var nama, favorit string
 
 	//function
 	module.Intro()
 
+	fmt.Printf("Masukkan nama anda : ")
+	fmt.Scan(&nama)
+
 	//function return
 	fmt.Println(module.Salam(nama))
 
-	//function multiple return
-	hargaSebelum, hargaSesudah := module.Recent(favorit)
-	fmt.Println("Harga minuman", favorit, "sebesar :", hargaSebelum, "sehingga perlu membayar (PPN) :", hargaSesudah)
-
 	//anonymous func
 	anggotaMember := func(nama string) bool {
-		if nama == "Wendy" {
+		if nama == "Wendy" || nama == "wendy" {
 			return true
-		} else if nama == "Harry" {
+		} else if nama == "Harry" || nama == "harry" {
 			return true
 		} else {
 			return false
@@ -36,8 +34,21 @@ func main() {
 	module.TampilJaga()
 
 	//struct method
-	jaga1 := module.DaftarJaga{module.Nama: "Rian"}
-	jaga1.modulasi.ShiftJaga(nama)
+	jaga1 := module.DaftarJaga{Nama: "Budi"}
+	jaga1.ShiftJaga(nama)
 
+	//struck anonymous
+	module.DaftarMenu()
+
+	fmt.Printf("Masukkan nama menu yang ingin dipesan : ")
+	fmt.Scan(&favorit)
+
+	//function multiple return
+	hargaSebelum, hargaDiskon := module.Recent(favorit)
+	fmt.Println("\nHarga minuman", favorit, "sebesar :", hargaSebelum, "dan setelah diskon member (khusus member) :", hargaDiskon)
+
+	//interface struct
+	pjk := module.PPN{Harga: float32(hargaSebelum)}
+	module.Menghitung(pjk.Harga)
 
 }
