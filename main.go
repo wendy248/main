@@ -17,6 +17,7 @@ func main() {
 	fmt.Scan(&nama)
 
 	//function return
+	fmt.Println("")
 	fmt.Println(module.Salam(nama))
 
 	//anonymous func
@@ -29,7 +30,6 @@ func main() {
 			return false
 		}
 	}
-	fmt.Println("")
 	module.Member(nama, anggotaMember)
 
 	//struct
@@ -43,7 +43,7 @@ func main() {
 	module.DaftarMenu()
 
 order:
-	fmt.Printf("Masukkan nama menu yang ingin dipesan : ")
+	fmt.Printf("\nMasukkan nama menu yang ingin dipesan : ")
 	fmt.Scan(&favorit)
 
 	fmt.Printf("Masukkan jumlah porsi yang diinginkan : ")
@@ -58,7 +58,6 @@ order:
 
 	fmt.Printf("\nApakah ingin menambah pesanan? (Y / N) : ")
 	fmt.Scan(&pilihan)
-	fmt.Println("")
 
 	if pilihan == "Y" || pilihan == "y" {
 		goto order
