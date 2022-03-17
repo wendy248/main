@@ -7,8 +7,8 @@ import (
 )
 
 func main() {
-	var nama, favorit string
-	var jumlah float32
+	var nama, favorit, pilihan string
+	var jumlah, hargaSebelum2, hargaDiskon2 float32
 
 	//function
 	module.Intro()
@@ -29,6 +29,7 @@ func main() {
 			return false
 		}
 	}
+	fmt.Println("")
 	module.Member(nama, anggotaMember)
 
 	//struct
@@ -41,6 +42,7 @@ func main() {
 	//struck anonymous
 	module.DaftarMenu()
 
+order:
 	fmt.Printf("Masukkan nama menu yang ingin dipesan : ")
 	fmt.Scan(&favorit)
 
@@ -49,10 +51,21 @@ func main() {
 
 	//function multiple return
 	hargaSebelum, hargaDiskon := module.Recent(favorit, jumlah)
-	fmt.Println("\nTotal harga minuman", favorit, "sebesar :", hargaSebelum, "dan setelah diskon member (khusus member) :", hargaDiskon)
+	hargaSebelum2 = hargaSebelum2 + hargaSebelum
+	hargaDiskon2 = hargaDiskon2 + hargaDiskon
 
-	//interface struct
-	pjk := module.PPN{Harga: float32(hargaSebelum)}
-	module.Menghitung(pjk.Harga)
+	fmt.Println("\nTotal harga minuman", favorit, "sebesar :", hargaSebelum2, "dan setelah diskon member (khusus member) :", hargaDiskon2)
 
+	fmt.Printf("\nApakah ingin menambah pesanan? (Y / N) : ")
+	fmt.Scan(&pilihan)
+	fmt.Println("")
+
+	if pilihan == "Y" || pilihan == "y" {
+		goto order
+	} else {
+		//interface struct
+		pjk := module.PPN{Harga: float32(hargaDiskon2)}
+		module.Menghitung(pjk.Harga)
+
+	}
 }
